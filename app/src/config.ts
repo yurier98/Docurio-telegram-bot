@@ -15,39 +15,119 @@ export default defineConfig({
           },
           shape: 'square',
           pagination: 'count',
-          title: 'Welcome to Telegram Onboarding Kit',
+          title: '👋 ¡Bienvenid@ a Docurio! ',
           description:
-            "Create stunning onboarding and paywall for your Telegram Bot using the full power of Mini Apps<br><br>It's <b>simple</b>, <b>fast</b>, highly <b>customizable</b> and <a href='https://github.com/Easterok/telegram-onboarding-kit' target='_blank'>open-source</a>!",
-          button: 'Next',
+            'Docurio es tu nueva herramienta para <b>organizar el conocimiento</b>  en equipo. <br> <br>  Vamos a configurarlo para tus necesidades en solo 1 minutos.',
+          button: 'Comenzar',
         },
-
-        // image
+        // form
         {
-          media: {
-            type: 'image',
-            src: import('./assets/img/durov.webp'),
-          },
-          shape: 'rounded',
-          pagination: 'count',
-          title: 'Onboarding supports many types of content',
-          description:
-            "Here you can see <b>Image</b>. But it's just the beginning...",
-          button: 'Next',
-        },
-
-        // sticker
-        {
+          extends: 'form',
           media: {
             type: 'sticker',
-            src: import('./assets/stickers/duck_love.tgs'),
-            size: 250,
+            src: import('./assets/stickers/duck_juggling.tgs'),
+            size: 150,
           },
           shape: 'square',
           pagination: 'count',
-          title: 'Telegram stickers',
-          description:
-            'Just download any <b>.tgs</b> sticker from Telegram and use it in your onboardings',
-          button: 'Next',
+          title: '¿Cómo quieres usar Docurio?',
+          description: 'Nos ayudará a personalizar tu experiencia.',
+          form: [
+            {
+              id: 'work',
+              placeholder: 'Para el trabajo',
+              type: 'checkbox',
+            },
+            {
+              id: 'personal',
+              placeholder: 'Para uso personal',
+              type: 'checkbox',
+            },
+            {
+              id: 'eductaion',
+              placeholder: 'Educativo',
+              type: 'checkbox',
+            },
+            {
+              id: 'other',
+              placeholder: 'Other',
+              type: 'checkbox',
+            },
+          ],
+          button: 'Continuar',
+        },
+        // form
+        {
+          extends: 'form',
+          media: {
+            type: 'sticker',
+            src: import('./assets/stickers/duck_juggling.tgs'),
+            size: 150,
+          },
+          shape: 'square',
+          pagination: 'count',
+          title: '¿De qué forma quieres usar Docurio?',
+          description: 'Esto nos ayudará a personalizar tu experiencia.',
+          form: [
+            {
+              id: 'team',
+              placeholder: 'Con otros',
+              type: 'checkbox',
+            },
+            {
+              id: 'solo',
+              placeholder: 'Por mi cuenta',
+              type: 'checkbox',
+            },
+          ],
+          button: 'Continuar',
+        },
+
+        // form
+        {
+          extends: 'form',
+          media: {
+            type: 'sticker',
+            src: import('./assets/stickers/duck_juggling.tgs'),
+            size: 150,
+          },
+          shape: 'square',
+          pagination: 'count',
+          title: '¿Qué tienes en mente?',
+          description: 'Selecciona tanto como quieras.',
+          form: [
+            {
+              id: 'team',
+              placeholder: 'Investigación',
+              type: 'checkbox',
+            },
+            {
+              id: 'solo',
+              placeholder: 'Sitio o blog',
+              type: 'checkbox',
+            },
+            {
+              id: 'solo',
+              placeholder: 'Procedimientos',
+              type: 'checkbox',
+            },
+            {
+              id: 'solo',
+              placeholder: 'Notas',
+              type: 'checkbox',
+            },
+            {
+              id: 'solo',
+              placeholder: 'Plan de clases',
+              type: 'checkbox',
+            },
+            {
+              id: 'solo',
+              placeholder: 'Resoluciones',
+              type: 'checkbox',
+            },
+          ],
+          button: 'Continuar',
         },
 
         // form
@@ -65,13 +145,13 @@ export default defineConfig({
           form: [
             {
               id: 'text_from_form',
-              placeholder: 'Text input',
+              placeholder: 'Nombre completo',
               type: 'text',
             },
             {
               id: 'number_from_form',
-              placeholder: 'Number input',
-              type: 'number',
+              placeholder: 'Edad',
+              type: 'date',
             },
             {
               id: 'checkbox_from_form',
@@ -79,23 +159,7 @@ export default defineConfig({
               type: 'checkbox',
             },
           ],
-          button: 'Next',
-        },
-
-        // video
-        {
-          media: {
-            type: 'video',
-            src: import('./assets/videos/spongebob.mp4'),
-            poster: import('./assets/img/spongebob_poster.webp'),
-            style: 'aspect-ratio: 400/287', // here we manually set video aspect-ratio (default is 16:9)
-          },
-          shape: 'rounded',
-          pagination: 'count',
-          title: 'Videos',
-          description:
-            "Typically, video starts <b>automatically</b><br><br>However, on iOS, it will only autoplay upon any prior tap on the page ('Next' button doesn't count). If video doesn't autoplay, user will see preview and pretty animation, inviting them to tap to play the video",
-          button: 'Next',
+          button: '',
         },
 
         // list
@@ -168,18 +232,70 @@ export default defineConfig({
           },
           shape: 'square',
           pagination: 'count',
-          title: 'Some other features:',
+          title: 'Otras características:',
           description: '',
           list: [
-            'One-click 0$ <b>deploy</b> on GitHub Pages',
-            'Language and currency localization',
-            'Buttons with <b>haptic</b> feedback',
-            'Content pre-loading for high speed',
-            '<b>Low-code</b> approach to building onboardings',
-            'Many examples/presets',
-            "And many more... (see <a href='https://github.com/Easterok/telegram-onboarding-kit' target='_blank'>GitHub</a>)",
+            'Editor colaborativo en tiempo real',
+            'Espacios de trabajos',
+            'Múltiples colecciones',
+            'Comentarios y sugerencias ',
+            'Historial de páginas',
+            'Búsqueda super rápidas',
+            "Y mucho más... (ver  <a href='https://www.docurio.co' target='_blank'>Docurio</a>)",
           ],
           button: 'Next',
+        },
+
+        // paywall
+        {
+          extends: 'paywall',
+          path: '/paywall',
+          media: {
+            type: 'sticker',
+            src: import('./assets/stickers/duck_cool.tgs'),
+            size: 150,
+          },
+          shape: 'square',
+          title: 'Desbloquea el acceso a todas las funciones',
+          list: ['Unlimited traffic', 'Any number of devices', 'No ads'],
+          products: [
+            {
+              id: '1_month_subscription',
+              title: '1 month subscription',
+              description: '2$/month',
+              discount: '',
+              price: 2,
+            },
+            {
+              id: '1_year_subscription',
+              title: '1 year subscription',
+              description: '1$/month',
+              discount: 'Discount 50%',
+              price: 12,
+            },
+            {
+              id: 'lifetime_access',
+              title: 'Lifetime access',
+              description: '20$ once',
+              discount: 'Best offer',
+              price: 20,
+            },
+          ],
+          mainButtonText: 'Buy for {price}',
+          popup: {
+            // popup for payment methods choice
+            type: 'web',
+          },
+          links: [
+            {
+              text: 'Privacy policy',
+              href: 'https://google.com',
+            },
+            {
+              text: 'Terms of use',
+              href: 'https://google.com',
+            },
+          ],
         },
 
         // go to paywall slide
